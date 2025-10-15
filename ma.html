@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buffalo Dairy Form</title>
+</head>
+<body>
+    <style>
+        p:nth-child(3){
+            background-color: bisque;
+        }
+        p:first-child{
+            background-color: blue;
+        }
+        input:checked{
+            background-color:red;
+        }
+    </style>
+
+    <form id="dairyForm">
+        <p>
+            <label for="buffaloId">Buffalo ID:</label><br>
+            <input type="text" id="buffaloId" name="buffaloId" required>
+        </p>
+
+        <p>
+            <label for="date">Date:</label><br>
+            <input type="date" id="date" name="date" required>
+        </p>
+
+        <p>
+            <label for="milkMorning">Milk Quantity (Morning in Litres):</label><br>
+            <input type="number" id="milkMorning" name="milkMorning" step="0.1" required>
+        </p>
+
+        <p>
+            <label for="milkEvening">Milk Quantity (Evening in Litres):</label><br>
+            <input type="number" id="milkEvening" name="milkEvening" step="0.1" required>
+        </p>
+
+        <p>
+            <label for="healthNotes">Health Notes:</label><br>
+            <textarea id="healthNotes" name="healthNotes" rows="4" cols="40" placeholder="Any health-related notes..."></textarea>
+        </p>
+
+        <p>
+            <input type="button" value="Export Data" onclick="exportData()">
+            <input type="reset" value="Clear Form">
+        </p>
+        
+        <input type="checkbox"/><labele>male</labele>
+        
+    </form>
+
+    <script>
+        function exportData() {
+            const buffaloId = document.getElementById("buffaloId").value;
+            const date = document.getElementById("date").value;
+            const milkMorning = document.getElementById("milkMorning").value;
+            const milkEvening = document.getElementById("milkEvening").value;
+            const healthNotes = document.getElementById("healthNotes").value;
+
+            if (!buffaloId || !date || !milkMorning || !milkEvening) {
+                alert("Please fill out all required fields.");
+                return;
+            }
+
+            const content =
+                `Buffalo ID: ${buffaloId}\n` +
+                `Date: ${date}\n` +
+                `Morning Milk: ${milkMorning} L\n` +
+                `Evening Milk: ${milkEvening} L\n` +
+                `Health Notes: ${healthNotes}`;
+
+            const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = `${buffaloId}_${date}.txt`;
+            link.click();
+        }
+    </script>
+</body>
+</html>

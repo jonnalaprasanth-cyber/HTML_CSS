@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forms in HTML</title>
+    <link rel="stylesheet" href="C:\Users\Prasanth\OneDrive\Desktop\my.html\styles.css"/>
+    <style>
+        p::first-letter{
+            color:red
+        }
+        p::selection {
+        background-color: blue;
+}
+p::before {
+        content:"->";
+}
+p::after {
+        content: "**";
+}
+button:hover{
+    background-color: aqua;
+}
+input[type="email"] {
+  background-color:blueviolet;
+}
+inpput[required]{
+     border: 2px solid red;
+}
+button:focus{
+    border-color: blue;
+}
+
+    </style>
+</head>
+<body>
+    <h1>My Project</h1>
+
+    <form>
+        <p>
+            <label for="text">Text: </label>
+            
+            <input type="text" id="text" name="text" placeholder="Enter text">
+        </p>
+
+        <p>
+            <label for="file">File: </label>
+            <input type="file" id="file" name="file">
+        </p>
+
+        <p>
+            <input type="button" value="Click Me">
+        </p>
+
+        <p>
+            <label>
+                <input type="checkbox" name="subscribe"> Subscribe to newsletter
+            </label>
+        </p>
+
+        <p>
+            <label for="color">Color: </label>
+            <input type="color" id="color" name="color">
+        </p>
+
+        <p>
+            <label for="date">Date: </label>
+            <input type="date" id="date" name="date">
+        </p>
+
+        <p>
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+        </p>
+
+        <p>
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password">
+        </p>
+
+        <p>
+            <label for="month">Month: </label>
+            <input type="month" id="month" name="month">
+        </p>
+
+        <p>
+            <label for="number">Number: </label>
+            <input type="number" id="number" name="number" min="0">
+        </p>
+
+        <p>
+            <label for="url">Website URL: </label>
+            <input type="url" id="url" name="url" placeholder="https://example.com">
+        </p>
+
+        <p>
+            <label>
+                <input type="radio" name="gender" value="male"> Male
+            </label>
+            <label>
+                <input type="radio" name="gender" value="female"> Female
+            </label>
+        </p>
+
+        <p>
+            <label for="range">Range: </label>
+            <input type="range" id="range" name="range" min="0" max="100">
+        </p>
+
+        <p>
+            <input type="reset" value="Reset Form">
+        </p>
+
+        <p>
+            <label for="search">Search: </label>
+            <input type="search" id="search" name="search" placeholder="Search...">
+        </p>
+
+        <p>
+            <input type="submit" value="Submit Form">
+        </p>
+
+        <p>
+            <label for="tel">Phone: </label>
+            <input type="tel" id="tel" name="tel" placeholder="+1234567890">
+        </p>
+
+        <p>
+            <label for="time">Time: </label>
+            <input type="time" id="time" name="time">
+        </p>
+
+        <p>
+            <label for="week">Week: </label>
+            <input type="week" id="week" name="week">
+        </p>
+        <button>submit</button><br><br>
+        <input type="text"/>
+
+    </form>
+</body>
+</html>
